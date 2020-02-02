@@ -1,0 +1,10 @@
+version: "3"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    user: 1000:1000
+    network_mode: "host"
+    volumes:
+      - /var/lib/ilus/jellyfin:/config
+      - /var/cache/ilus/jellyfin:/cache
+      - /storage/media:/raid/media

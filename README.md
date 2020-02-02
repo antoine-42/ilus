@@ -33,7 +33,7 @@ sudo systemctl start plex transmission sonarr radarr
 Enable the services for autostart:
 
 ```bash
-sudo systemctl enable plex transmission
+sudo systemctl enable plex transmission sonarr radarr
 ```
 
 ## Useful websites
@@ -41,6 +41,7 @@ sudo systemctl enable plex transmission
 ### Documentation
 
 - [Plex Docker](https://github.com/plexinc/pms-docker)
+- [Jellyfin docker](https://jellyfin.org/docs/general/administration/installing.html#official-docker-hub)
 - [Transmission Docker](https://haugene.github.io/docker-transmission-openvpn/)
 - [Sonarr docker](https://hub.docker.com/r/linuxserver/sonarr)
 - [Radarr docker](https://hub.docker.com/r/linuxserver/radarr)
