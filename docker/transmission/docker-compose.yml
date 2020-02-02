@@ -14,9 +14,11 @@ services:
       - 208.67.222.222
       - 1.1.1.1
     volumes:
+      - /var/lib/ilus/transmission:/transmission-home
       - /etc/localtime:/etc/localtime:ro
       - /storage/temp/:/data
     environment:
+      - TRANSMISSION_HOME=/transmission-home
       - OPENVPN_PROVIDER=NORDVPN
       - NORDVPN_COUNTRY=FR
       - OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60
