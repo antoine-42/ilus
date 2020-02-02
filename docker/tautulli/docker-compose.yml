@@ -12,4 +12,4 @@ services:
     network_mode: host
     volumes:
       - /var/lib/ilus/tautulli:/config
-      - /temp/ilus/plex:/plex_logs:ro
+      - /var/lib/ilus/plex/Library/Application Support/Plex Media Server/Logs:/plex_logs:ro
