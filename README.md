@@ -9,9 +9,10 @@ Create the config files directories in `var/lib`:
 
 ```bash
 cd /var/lib
-mkdir ilus
+sudo mkdir ilus
 cd ilus
-mkdir plex transmission sonarr radarr
+sudo chown antoine:antoine ./
+mkdir plex tautulli jellyfin transmission jackett sonarr radarr
 ```
 
 If necessary, migrate the old config to these directories.
@@ -27,13 +28,13 @@ Make sure the paths to the `docker-compose.yml` files are accurate.
 Start the services:
 
 ```bash
-sudo systemctl start plex transmission sonarr radarr
+sudo systemctl start plex tautulli jellyfin transmission jackett sonarr radarr
 ```
 
 Enable the services for autostart:
 
 ```bash
-sudo systemctl enable plex transmission sonarr radarr
+sudo systemctl enable plex tautulli jellyfin transmission jackett sonarr radarr
 ```
 
 ## Useful websites
@@ -41,6 +42,7 @@ sudo systemctl enable plex transmission sonarr radarr
 ### Documentation
 
 - [Plex Docker](https://github.com/plexinc/pms-docker)
+- [Tautulli docker](https://github.com/Tautulli/Tautulli-Docker)
 - [Jellyfin docker](https://jellyfin.org/docs/general/administration/installing.html#official-docker-hub)
 - [Transmission Docker](https://haugene.github.io/docker-transmission-openvpn/)
 - [Sonarr docker](https://hub.docker.com/r/linuxserver/sonarr)
