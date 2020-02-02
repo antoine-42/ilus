@@ -5,7 +5,7 @@ services:
     container_name: radarr
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=998
       - TZ=Europe/Paris
     volumes:
       - /var/lib/ilus/radarr:/config

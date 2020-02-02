@@ -5,7 +5,7 @@ services:
     container_name: sonarr
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=998
       - TZ=Europe/Paris
     volumes:
       - /var/lib/ilus/sonarr:/config
