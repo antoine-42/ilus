@@ -1,0 +1,13 @@
+version: '2'
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Paris
+    network_mode: host
+    volumes:
+      - /var/lib/ilus/plex:/config
+      - /temp/ilus/plex:/transcode
+      - /storage/media:/raid/media

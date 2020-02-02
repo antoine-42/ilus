@@ -1,0 +1,30 @@
+version: '2'
+services:
+  transmission:
+    image: haugene/transmission-openvpn
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    restart: always
+    ports:
+      - "9091:9091"
+      - "8888:8888"
+    dns:
+      - 208.67.222.222
+      - 1.1.1.1
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /storage/temp/:/data
+    environment:
+      - OPENVPN_PROVIDER=NORDVPN
+      - OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60
+      - LOCAL_NETWORK=192.168.0.0/24
+  proxy:
+    image: haugene/transmission-openvpn-proxy
+    links:
+      - transmission
+    ports:
+      - 8080:8080
+    volumes:
+      - /etc/localtime:/etc/localtime:ro

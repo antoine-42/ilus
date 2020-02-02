@@ -194,3 +194,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+
+
+# Sensitive information
+/docker/plex/docker-compose.override.yml
+/docker/transmission/docker-compose.override.yml
