@@ -6,7 +6,7 @@ Scripts and config files for my media server
 Move the systemd services to `/etc/systemd/system/`:
 
 ```bash
-mv docker/services/* /etc/systemd/system/
+cp docker/services/* /etc/systemd/system/
 ```
 
 Make sure the paths to the `docker-compose.yml` files are accurate.
@@ -14,13 +14,11 @@ Make sure the paths to the `docker-compose.yml` files are accurate.
 Start the services:
 
 ```bash
-sudo systemctl start plex
-sudo systemctl start transmission
+sudo systemctl start plex transmission
 ```
 
 Enable the services for autostart:
 
 ```bash
-sudo systemctl enable plex
-sudo systemctl enable transmission
+sudo systemctl enable plex transmission
 ```
