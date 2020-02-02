@@ -1,0 +1,15 @@
+version: "2"
+services:
+  radarr:
+    image: linuxserver/radarr
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    volumes:
+      - /var/lib/ilus/radarr:/config
+      - /storage/media/movies:/movies
+      - /storage/temp/radarr:/downloads
+    ports:
+      - 7878:7878
