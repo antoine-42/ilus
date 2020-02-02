@@ -3,7 +3,6 @@ services:
   plex:
     container_name: plex
     image: plexinc/pms-docker
-    restart: unless-stopped
     environment:
       - TZ=Europe/Paris
     network_mode: host

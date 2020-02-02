@@ -6,7 +6,6 @@ services:
       - NET_ADMIN
     devices:
       - /dev/net/tun
-    restart: always
     ports:
       - "9091:9091"
       - "8888:8888"
