@@ -27,7 +27,7 @@ Make sure the paths to the `docker-compose.yml` files are accurate.
 Start the services:
 
 ```bash
-sudo systemctl start plex transmission
+sudo systemctl start plex transmission sonarr radarr
 ```
 
 Enable the services for autostart:
