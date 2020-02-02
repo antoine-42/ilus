@@ -8,10 +8,10 @@ Restart=always
 User=antoine
 Group=docker
 # Shutdown container (if running) when unit is stopped
-ExecStartPre=docker-compose --project-directory /home/antoine/git/projects/ilus/docker/plex down -v
+ExecStartPre=docker-compose -f /home/antoine/git/projects/ilus/docker/plex/docker-compose.yml -f /home/antoine/git/projects/ilus/docker/plex/docker-compose.override.yml down -v
 # Start container when unit is started
-ExecStart=docker-compose --project-directory /home/antoine/git/projects/ilus/docker/plex up
+ExecStart=docker-compose -f /home/antoine/git/projects/ilus/docker/plex/docker-compose.yml -f /home/antoine/git/projects/ilus/docker/plex/docker-compose.override.yml up
 # Stop container when unit is stopped
-ExecStop=docker-compose --project-directory /home/antoine/git/projects/ilus/docker/plex down -v
+ExecStop=docker-compose -f /home/antoine/git/projects/ilus/docker/plex/docker-compose.yml -f /home/antoine/git/projects/ilus/docker/plex/docker-compose.override.yml down -v
 [Install]
 WantedBy=multi-user.target
