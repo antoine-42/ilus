@@ -8,10 +8,10 @@ Restart=always
 User=antoine
 Group=docker
 # Shutdown container (if running) when unit is stopped
-ExecStartPre=docker-compose -f /home/antoine/git/projects/ilus/docker/transmission/docker-compose.yml down -v
+ExecStartPre=docker-compose --project-directory /home/antoine/git/projects/ilus/docker/transmission down -v
 # Start container when unit is started
-ExecStart=docker-compose -f /home/antoine/git/projects/ilus/docker/transmission/docker-compose.yml up
+ExecStart=docker-compose --project-directory /home/antoine/git/projects/ilus/docker/transmission up
 # Stop container when unit is stopped
-ExecStop=docker-compose -f /home/antoine/git/projects/ilus/docker/transmission/docker-compose.yml down -v
+ExecStop=docker-compose --project-directory /home/antoine/git/projects/ilus/docker/transmission down -v
 [Install]
 WantedBy=multi-user.target
