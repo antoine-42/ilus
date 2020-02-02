@@ -18,8 +18,10 @@ services:
       - /storage/temp/:/data
     environment:
       - OPENVPN_PROVIDER=NORDVPN
+      - NORDVPN_COUNTRY=FR
       - OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60
       - LOCAL_NETWORK=192.168.0.0/24
+      - TRANSMISSION_WEB_UI=combustion
   proxy:
     image: haugene/transmission-openvpn-proxy
     links:
