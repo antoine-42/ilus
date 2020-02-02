@@ -12,7 +12,6 @@ cd /var/lib
 sudo mkdir ilus
 cd ilus
 sudo chown antoine:antoine ./
-mkdir plex tautulli jellyfin transmission jackett sonarr radarr
 ```
 
 If necessary, migrate the old config to these directories.
@@ -20,7 +19,7 @@ If necessary, migrate the old config to these directories.
 Move the systemd services to `/etc/systemd/system/`:
 
 ```bash
-cp docker/services/* /etc/systemd/system/
+sudo cp docker/services/* /etc/systemd/system/
 ```
 
 Make sure the paths to the `docker-compose.yml` files are accurate.
@@ -45,5 +44,6 @@ sudo systemctl enable plex tautulli jellyfin transmission jackett sonarr radarr
 - [Tautulli docker](https://github.com/Tautulli/Tautulli-Docker)
 - [Jellyfin docker](https://jellyfin.org/docs/general/administration/installing.html#official-docker-hub)
 - [Transmission Docker](https://haugene.github.io/docker-transmission-openvpn/)
+- [Jackett docker](https://hub.docker.com/r/linuxserver/jackett)
 - [Sonarr docker](https://hub.docker.com/r/linuxserver/sonarr)
 - [Radarr docker](https://hub.docker.com/r/linuxserver/radarr)
