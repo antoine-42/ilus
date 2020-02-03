@@ -1,6 +1,6 @@
 [Unit]
 Description=Sonarr
-Requires=docker.service transmission.service
+Requires=docker.service
 After=docker.service transmission.service
 
 [Service]

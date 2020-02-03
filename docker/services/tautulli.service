@@ -1,6 +1,6 @@
 [Unit]
 Description=Tautulli
-Requires=docker.service plex.service
+Requires=docker.service
 After=docker.service plex.service
 
 [Service]

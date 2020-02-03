@@ -15,7 +15,7 @@ services:
     volumes:
       - /var/lib/ilus/transmission:/transmission-home
       - /etc/localtime:/etc/localtime:ro
-      - /storage/temp/:/data
+      - /storage/temp/:/downloads
     environment:
       - TRANSMISSION_HOME=/transmission-home
       - OPENVPN_PROVIDER=NORDVPN

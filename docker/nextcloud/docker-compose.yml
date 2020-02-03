@@ -1,0 +1,27 @@
+version: '3'
+
+volumes:
+  nextcloud: /var/lib/ilus/nextcloud/app
+  db: /var/lib/ilus/nextcloud/db
+
+services:
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - db:/var/lib/postgresql/data
+    env_file:
+      - db.env
+
+  app:
+    image: nextcloud:apache
+    ports:
+      - 8080:80
+    volumes:
+      - nextcloud:/var/www/html
+    environment:
+      - POSTGRES_HOST=db
+    env_file:
+      - db.env
+    depends_on:
+      - db

@@ -47,3 +47,6 @@ sudo systemctl enable plex tautulli jellyfin transmission jackett sonarr radarr
 - [Jackett docker](https://hub.docker.com/r/linuxserver/jackett)
 - [Sonarr docker](https://hub.docker.com/r/linuxserver/sonarr)
 - [Radarr docker](https://hub.docker.com/r/linuxserver/radarr)
+
+
+- [NextCloud docker](https://hub.docker.com/_/nextcloud/), [docker-compose source](https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/insecure/postgres/apache/docker-compose.yml)
