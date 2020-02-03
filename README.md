@@ -25,7 +25,7 @@ cd ilus
 sudo chown antoine:antoine ./
 ```
 
-If necessary, migrate the old config to these directories.
+If necessary, migrate the old config files to these directories. Check the documentation for the relevant application for more information.
 
 ### Systemd services
 
