@@ -1,0 +1,15 @@
+version: "2"
+services:
+  lazylibrarian:
+    image: linuxserver/lazylibrarian
+    container_name: lazylibrarian
+    environment:
+      - PUID=1000
+      - PGID=998
+      - TZ=Europe/Paris
+    volumes:
+      - /var/lib/ilus/lazylibrarian:/config
+      - /storage/media/books:/books
+      - /storage/temp/lazylibrarian:/downloads/lazylibrarian
+    ports:
+      - 5299:5299
