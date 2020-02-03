@@ -3,7 +3,18 @@ Scripts and config files for my media server
 
 ## Deployment
 
-Install [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/).
+First, install [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/).
+
+### Local docker-compose files
+
+create the local config files that contain sensitive information:
+
+- `/docker/plex/docker-compose.override.yml`
+- `/docker/transmission/docker-compose.override.yml`
+
+Fill in the .template files at these locations.
+
+### Config files location for apps
 
 Create the config files directories in `var/lib`:
 
@@ -16,6 +27,8 @@ sudo chown antoine:antoine ./
 
 If necessary, migrate the old config to these directories.
 
+### Systemd services
+
 Move the systemd services to `/etc/systemd/system/`:
 
 ```bash
@@ -27,13 +40,13 @@ Make sure the paths to the `docker-compose.yml` files are accurate.
 Start the services:
 
 ```bash
-sudo systemctl start plex tautulli jellyfin transmission jackett sonarr radarr
+sudo systemctl start plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud
 ```
 
 Enable the services for autostart:
 
 ```bash
-sudo systemctl enable plex tautulli jellyfin transmission jackett sonarr radarr
+sudo systemctl enable plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud
 ```
 
 ## Useful websites

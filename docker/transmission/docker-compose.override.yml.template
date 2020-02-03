@@ -1,0 +1,7 @@
+version: '2'
+services:
+  transmission:
+    environment:
+      - OPENVPN_USERNAME=<vpn-login>
+      - OPENVPN_PASSWORD=<vpn-password>
+      - TRANSMISSION_RPC_PASSWORD=<transmission-web-password>

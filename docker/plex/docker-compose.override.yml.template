@@ -1,0 +1,5 @@
+version: '2'
+services:
+  plex:
+    environment:
+      - PLEX_CLAIM=<https://www.plex.tv/claim>
