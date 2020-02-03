@@ -1,6 +1,6 @@
 version: "2"
 services:
-  sonarr:
+  lidarr:
     image: linuxserver/lidarr
     container_name: lidarr
     environment:
@@ -12,4 +12,4 @@ services:
       - /storage/media/music:/music
       - /storage/temp/lidarr:/downloads/lidarr
     ports:
-      - 8989:8989
+      - 8686:8686
