@@ -40,13 +40,13 @@ Make sure the paths to the `docker-compose.yml` files are accurate.
 Start the services:
 
 ```bash
-sudo systemctl start plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab
+sudo systemctl start  ddclient nginx plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab
 ```
 
 Enable the services for autostart:
 
 ```bash
-sudo systemctl enable plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab
+sudo systemctl enable ddclient nginx plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab
 ```
 
 ## Useful websites
@@ -55,6 +55,7 @@ sudo systemctl enable plex tautulli jellyfin transmission jackett sonarr radarr 
 
 - Network:
     - [ddclient docker](https://hub.docker.com/r/linuxserver/ddclient)
+    - [Nginx with let's encrypt docker](https://github.com/linuxserver/docker-letsencrypt/blob/master/README.md)
     
 
 - Media server:
