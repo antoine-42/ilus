@@ -56,6 +56,42 @@ Enable the services for autostart:
 sudo systemctl enable ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab grafana home-assistant
 ```
 
+## Make the server available remotely
+
+Buy a domain. I used [NameCheap](https://namecheap.com).
+
+### Domain setup on NameCheap
+
+Go to the management page for your domain. On 'Domain', create a wildcard redirect.
+
+Create 2 'A + Dynamic DNS Record' with Host set to:
+
+- '@': root record, for website.com
+- '*': wildcard record, for whatever.website.com
+
+set Value to any valid IP, and you can leave the TTL on auto.
+
+Enable DNSSEC and Dynamic DNS.
+
+### Local config
+
+edit `/var/lib/ilus/ddclient/ddclient.conf`:
+
+- Uncomment the first `use=web` line
+- Uncomment and fill in the NameCheap section according to the [NameCheap documentation](https://www.namecheap.com/support/knowledgebase/article.aspx/583/11/how-do-i-configure-ddclient)
+
+## Troubleshooting
+
+### DDclient
+
+There may be a [permission bug with DDclient](https://github.com/linuxserver/docker-ddclient/issues/32), to fix it make `/var/lib/ilus/ddclient` accessible:
+
+```bash
+chmod +x /var/lib/ilus/ddclient/ddclient.conf
+```
+
+and make any change to `/var/lib/ilus/ddclient/ddclient.conf`. You'll have to do that every time the image is launched.
+
 ## Useful websites
 
 [antoine-dujardin.com](http://antoine-dujardin.com)
@@ -63,7 +99,7 @@ sudo systemctl enable ddclient nginx pi-hole plex tautulli jellyfin transmission
 ### Documentation
 
 - Network:
-    - [ddclient](https://hub.docker.com/r/linuxserver/ddclient)
+    - [DDclient](https://hub.docker.com/r/linuxserver/ddclient)
     - [Nginx with let's encrypt](https://github.com/linuxserver/docker-letsencrypt/blob/master/README.md)
     - [Pie-hole](https://github.com/pi-hole/docker-pi-hole/)
 
