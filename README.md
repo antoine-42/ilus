@@ -75,10 +75,19 @@ Enable DNSSEC and Dynamic DNS.
 
 ### Local config
 
-edit `/var/lib/ilus/ddclient/ddclient.conf`:
+Edit `/var/lib/ilus/ddclient/ddclient.conf`:
 
 - Uncomment the first `use=web` line
 - Uncomment and fill in the NameCheap section according to the [NameCheap documentation](https://www.namecheap.com/support/knowledgebase/article.aspx/583/11/how-do-i-configure-ddclient)
+
+### Client-side certificate authentication
+
+Use the scripts in `scripts/client-cert-auth/`. They are based on [this blog post](https://fardog.io/blog/2017/12/30/client-side-certificate-authentication-with-nginx/).
+
+Once you have the .pfx files, you can import them to:
+
+- chrome: settings > manage certificates > your certificates.
+- android: settings > security > encryption & credentials > credentials > install from storage, then: vpn and apps.
 
 ## Troubleshooting
 
