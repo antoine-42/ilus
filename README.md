@@ -1,5 +1,5 @@
 # ilus
-Scripts and config files for my media server
+Scripts and config files for my media server.
 
 ## Deployment
 
@@ -11,8 +11,9 @@ create the local config files that contain sensitive information:
 
 - `/docker/plex/docker-compose.override.yml`
 - `/docker/transmission/docker-compose.override.yml`
+- `/docker/pie-hole/docker-compose.override.yml`
 
-Fill in the .template files at these locations.
+You can just fill in the .template files at these locations.
 
 ### Config files location for apps
 
@@ -22,7 +23,7 @@ Create the config files directories in `var/lib`:
 cd /var/lib
 sudo mkdir ilus
 cd ilus
-sudo chown antoine:antoine ./
+sudo chown antoine:docker ./
 ```
 
 If necessary, migrate the old config files to these directories. Check the documentation for the relevant application for more information.
@@ -36,6 +37,12 @@ sudo cp docker/services/* /etc/systemd/system/
 ```
 
 Make sure the paths to the `docker-compose.yml` files are accurate.
+
+If some of the service files existed already, run:
+
+```bash
+sudo systemctl daemon-reload
+```
 
 Start the services:
 
