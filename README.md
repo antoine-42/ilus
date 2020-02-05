@@ -53,16 +53,22 @@ sudo systemctl enable plex tautulli jellyfin transmission jackett sonarr radarr 
 
 ### Documentation
 
-- [Plex Docker](https://github.com/plexinc/pms-docker)
-- [Tautulli docker](https://github.com/Tautulli/Tautulli-Docker)
-- [Jellyfin docker](https://jellyfin.org/docs/general/administration/installing.html#official-docker-hub)
-- [Transmission Docker](https://haugene.github.io/docker-transmission-openvpn/)
-- [Jackett docker](https://hub.docker.com/r/linuxserver/jackett)
-- [Sonarr docker](https://hub.docker.com/r/linuxserver/sonarr)
-- [Radarr docker](https://hub.docker.com/r/linuxserver/radarr)
-- [Lidarr docker](https://hub.docker.com/r/linuxserver/lidarr)
-- [LazyLibrarian docker](https://hub.docker.com/r/linuxserver/lazylibrarian)
+- Network:
+    - [ddclient docker](https://hub.docker.com/r/linuxserver/ddclient)
+    
 
+- Media server:
+    - [Plex Docker](https://github.com/plexinc/pms-docker)
+    - [Tautulli docker](https://github.com/Tautulli/Tautulli-Docker)
+    - [Jellyfin docker](https://jellyfin.org/docs/general/administration/installing.html#official-docker-hub)
+    - [Transmission Docker](https://haugene.github.io/docker-transmission-openvpn/)
+    - [Jackett docker](https://hub.docker.com/r/linuxserver/jackett)
+    - [Sonarr docker](https://hub.docker.com/r/linuxserver/sonarr)
+    - [Radarr docker](https://hub.docker.com/r/linuxserver/radarr)
+    - [Lidarr docker](https://hub.docker.com/r/linuxserver/lidarr)
+    - [LazyLibrarian docker](https://hub.docker.com/r/linuxserver/lazylibrarian)
+    
 
-- [NextCloud docker](https://hub.docker.com/_/nextcloud/), [docker-compose source](https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/insecure/postgres/apache/docker-compose.yml)
-- [GitLab docker](https://docs.gitlab.com/omnibus/docker/)
+- Self-hosted SaaS:
+    - [NextCloud docker](https://hub.docker.com/_/nextcloud/), [docker-compose source](https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/insecure/postgres/apache/docker-compose.yml)
+    - [GitLab docker](https://docs.gitlab.com/omnibus/docker/)
