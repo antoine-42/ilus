@@ -3,7 +3,7 @@ version: "2"
 services:
   letsencrypt:
     image: linuxserver/letsencrypt
-    container_name: letsencrypt
+    container_name: nginx
     cap_add:
       - NET_ADMIN
     environment:
@@ -12,7 +12,7 @@ services:
       - TZ=Europe/Paris
       - URL=antoine-dujardin.com
       - SUBDOMAINS=wildcard,
-      - VALIDATION=http
+      - VALIDATION=dns
       - DNSPLUGIN=cloudflare
       - EMAIL=antoinedujardin42@gmail.com
       - DHLEVEL=2048 #optional
