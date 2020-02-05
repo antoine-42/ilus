@@ -75,5 +75,9 @@ sudo systemctl enable ddclient nginx plex tautulli jellyfin transmission jackett
     - [GitLab docker](https://docs.gitlab.com/omnibus/docker/)
 
 
-- Home automation:
+- Monitoring
     - [Grafana](https://grafana.com/docs/grafana/latest/installation/docker/)
+
+
+- Home automation:
+    - [Home assistant](https://www.home-assistant.io/docs/installation/docker/)

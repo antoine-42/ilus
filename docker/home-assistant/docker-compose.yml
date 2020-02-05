@@ -1,0 +1,12 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant:stable
+    volumes:
+      - /var/lib/ilus/home-assistant:/config
+    environment:
+      - TZ=Europe/Paris
+    network_mode: host
+    ports:
+      - 8123:8123
