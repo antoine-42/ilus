@@ -58,6 +58,8 @@ sudo systemctl enable ddclient nginx pi-hole plex tautulli jellyfin transmission
 
 ## Useful websites
 
+[antoine-dujardin.com](http://antoine-dujardin.com)
+
 ### Documentation
 
 - Network:
