@@ -40,13 +40,13 @@ Make sure the paths to the `docker-compose.yml` files are accurate.
 Start the services:
 
 ```bash
-sudo systemctl start  ddclient nginx plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab
+sudo systemctl start  ddclient nginx plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab grafana
 ```
 
 Enable the services for autostart:
 
 ```bash
-sudo systemctl enable ddclient nginx plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab
+sudo systemctl enable ddclient nginx plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab grafana
 ```
 
 ## Useful websites
@@ -56,7 +56,7 @@ sudo systemctl enable ddclient nginx plex tautulli jellyfin transmission jackett
 - Network:
     - [ddclient docker](https://hub.docker.com/r/linuxserver/ddclient)
     - [Nginx with let's encrypt docker](https://github.com/linuxserver/docker-letsencrypt/blob/master/README.md)
-    
+
 
 - Media server:
     - [Plex Docker](https://github.com/plexinc/pms-docker)
@@ -73,3 +73,7 @@ sudo systemctl enable ddclient nginx plex tautulli jellyfin transmission jackett
 - Self-hosted SaaS:
     - [NextCloud docker](https://hub.docker.com/_/nextcloud/), [docker-compose source](https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/insecure/postgres/apache/docker-compose.yml)
     - [GitLab docker](https://docs.gitlab.com/omnibus/docker/)
+
+
+- Home automation:
+    - [Grafana](https://grafana.com/docs/grafana/latest/installation/docker/)
