@@ -199,4 +199,4 @@ dmypy.json
 # Sensitive information
 /docker/plex/docker-compose.override.yml
 /docker/transmission/docker-compose.override.yml
-/docker/pie-hole/docker-compose.override.yml
+/docker/pi-hole/docker-compose.override.yml
