@@ -33,7 +33,7 @@ If necessary, migrate the old config files to these directories. Check the docum
 Move the systemd services to `/etc/systemd/system/`:
 
 ```bash
-sudo cp docker/services/* /etc/systemd/system/
+sudo cp services/* /etc/systemd/system/
 ```
 
 Make sure the paths to the `docker-compose.yml` files are accurate.
