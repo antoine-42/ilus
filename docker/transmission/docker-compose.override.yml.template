@@ -4,4 +4,5 @@ services:
     environment:
       - OPENVPN_USERNAME=<vpn-login>
       - OPENVPN_PASSWORD=<vpn-password>
+      - TRANSMISSION_RPC_USERNAME=<transmission-web-username>
       - TRANSMISSION_RPC_PASSWORD=<transmission-web-password>
