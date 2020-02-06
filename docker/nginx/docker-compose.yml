@@ -12,6 +12,7 @@ services:
       - TZ=Europe/Paris
       - URL=antoine-dujardin.com
       - SUBDOMAINS=wildcard,
+      - EXTRA_DOMAINS=*.antoine-dujardin.com
       - VALIDATION=dns
       - DNSPLUGIN=cloudflare
       - EMAIL=antoinedujardin42@gmail.com
