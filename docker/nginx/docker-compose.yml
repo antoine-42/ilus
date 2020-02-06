@@ -11,7 +11,6 @@ services:
       - PGID=998
       - TZ=Europe/Paris
       - URL=antoine-dujardin.com
-      - SUBDOMAINS=wildcard,
       - EXTRA_DOMAINS=*.antoine-dujardin.com
       - VALIDATION=dns
       - DNSPLUGIN=cloudflare
