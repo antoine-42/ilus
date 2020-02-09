@@ -26,7 +26,7 @@ services:
       - INFLUXDB_ADMIN_ENABLED=true
 
   telegraf:
-    image: antoine42/telegraf:alpine
+    image: antoine42/telegraf
     container_name: telegraf
     networks:
       - monitoring
