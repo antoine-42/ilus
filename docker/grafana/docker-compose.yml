@@ -29,7 +29,7 @@ services:
     image: telegraf
     container_name: telegraf
     networks:
-      - container:influxdb
+      - monitoring
     volumes:
       - /var/lib/ilus/monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
       - /storage/temp/watch:/storage
