@@ -9,10 +9,9 @@ services:
     env_file:
       - db.env
 
-  app:
-    image: nextcloud:apache
+  app:image: nextcloud:apache
     ports:
-      - 8080:80
+      - 8081:80
     volumes:
       - /var/lib/ilus/nextcloud/app:/var/www/html
     environment:
