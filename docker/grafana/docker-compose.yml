@@ -24,10 +24,14 @@ services:
     environment:
       - INFLUXDB_DB=telegraf
       - INFLUXDB_ADMIN_ENABLED=true
-      - INFLUXDB_ADMIN_USER=admin
-      - INFLUXDB_ADMIN_PASSWORD=supersecretpassword
-      - INFLUXDB_USER=telegraf
-      - INFLUXDB_USER_PASSWORD=secretpassword
+
+  telegraf:
+    image: telegraf:latest
+    container_name: telegraf
+    links:
+      - influxdb
+    volumes:
+      - /var/lib/ilus/monitoring/telegraf:/etc/telegraf
 
 networks:
   monitoring:
