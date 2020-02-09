@@ -31,7 +31,7 @@ services:
     links:
       - influxdb
     volumes:
-      - /var/lib/ilus/monitoring/telegraf:/etc/telegraf
+      - /var/lib/ilus/monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
 
 networks:
   monitoring:
