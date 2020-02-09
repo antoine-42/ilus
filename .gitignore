@@ -200,3 +200,4 @@ dmypy.json
 /docker/plex/docker-compose.override.yml
 /docker/transmission/docker-compose.override.yml
 /docker/pi-hole/docker-compose.override.yml
+/docker/grafana/docker-compose.override.yml
