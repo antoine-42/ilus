@@ -3,7 +3,13 @@ Scripts and config files for my media server.
 
 ## Deployment
 
+### Install docker and build the images
+
 First, install [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/).
+
+Build the needed images:
+
+`docker build -t antoine42/telegraf ./docker/grafana/telegraf`
 
 ### Local docker-compose files
 

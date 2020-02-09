@@ -26,13 +26,14 @@ services:
       - INFLUXDB_ADMIN_ENABLED=true
 
   telegraf:
-    image: telegraf
+    image: antoine42/telegraf:alpine
     container_name: telegraf
     networks:
       - monitoring
     volumes:
       - /var/lib/ilus/monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
       - /storage/temp/watch:/storage
+      - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
   monitoring:
