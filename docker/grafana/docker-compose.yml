@@ -26,10 +26,10 @@ services:
       - INFLUXDB_ADMIN_ENABLED=true
 
   telegraf:
-    image: telegraf:latest
+    image: telegraf
     container_name: telegraf
-    links:
-      - influxdb
+    networks:
+      - monitoring
     volumes:
       - /var/lib/ilus/monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
 
