@@ -28,6 +28,7 @@ services:
   telegraf:
     image: antoine42/telegraf
     container_name: telegraf
+    privileged: true
     networks:
       - monitoring
     volumes:
