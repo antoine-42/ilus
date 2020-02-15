@@ -69,7 +69,7 @@ It's a pain in the ass to make telegraf work from docker, as you have to figure 
 First, [Install Telegraf](https://docs.influxdata.com/telegraf/v1.13/introduction/installation/), then copy the config file:
 
 ```bash
-cp conf/telegraf/telegraf.conf /etc/telegraf/telegraf.conf
+sudo cp conf/telegraf/telegraf.conf /etc/telegraf/telegraf.conf
 ```
 
 #### Smart monitoring
@@ -96,6 +96,22 @@ Add the telegraf user to the docker group:
 
 ```bash
 sudo usermod -aG docker telegraf
+```
+
+#### Temperature monitoring
+
+Install lm-sensors:
+
+```bash
+sudo apt install lm-sensors
+```
+
+#### Finish
+
+Finally, restart Telegraf to apply the changes:
+
+```bash
+sudo systemctl restart telegraf.service
 ```
 
 ## Make the server available remotely
