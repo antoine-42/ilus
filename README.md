@@ -107,9 +107,9 @@ chmod +x /var/lib/ilus/ddclient/ddclient.conf
 
 and make any change to `/var/lib/ilus/ddclient/ddclient.conf`. You'll have to do that every time the image is launched.
 
-## Updating the images
+## Updating an image
 
-Update all images:
+Run this to update an image:
 
 ```bash
 docker-compose pull
@@ -121,7 +121,7 @@ Let compose update all containers as necessary:
 docker-compose up -d
 ```
 
-You can also remove the old images:
+Remove the old dangling images:
 
 ```bash
 docker image prune
