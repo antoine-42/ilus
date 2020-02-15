@@ -62,6 +62,42 @@ Enable the services for autostart:
 sudo systemctl enable ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab grafana home-assistant
 ```
 
+### Telegraf
+
+It's a pain in the ass to make telegraf work from docker, as you have to figure out all the volumes you need to pass through for every sensor. So I install it directly on my machines.
+
+First, [Install Telegraf](https://docs.influxdata.com/telegraf/v1.13/introduction/installation/), then copy the config file:
+
+```bash
+cp conf/telegraf/telegraf.conf /etc/telegraf/telegraf.conf
+```
+
+#### Smart monitoring
+
+Install smartctl (may be called smartmontools or smartctl depending on the platform).
+
+```bash
+sudo apt install smartmontools
+```
+
+The Telegraf smart plugin needs to be able to run smartctl without entering a password. 
+
+Run `which smartctl` to know where the executable is, then run `sudo visudo` and add this to the end:
+
+```
+Cmnd_Alias SMARTCTL = <smartcl executable path>
+telegraf  ALL=(ALL) NOPASSWD: SMARTCTL
+Defaults!SMARTCTL !logfile, !syslog, !pam_session
+```
+
+#### Docker monitoring
+
+Add the telegraf user to the docker group:
+
+```bash
+sudo usermod -aG docker telegraf
+```
+
 ## Make the server available remotely
 
 Buy a domain. I used [NameCheap](https://namecheap.com).
