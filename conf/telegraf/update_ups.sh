@@ -5,6 +5,8 @@
 # Usage: ups.sh upsname[@hostname[:port]]
 # (same as `upsc`, see https://networkupstools.org/docs/man/upsc.html)
 #
+# Adapted from https://yegor.pomortsev.com/post/monitoring-everything/
+#
 set -euo pipefail
 IFS=$'\n\t'
 
