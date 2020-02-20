@@ -28,6 +28,7 @@ tags=(
 )
 fields=(
   load=${vars["ups.load"]}
+  power_nominal=${vars["ups.power.nominal"]}
   battery_charge=${vars["battery.charge"]}
   battery_charge_low=${vars["battery.charge.low"]}
   battery_runtime=${vars["battery.runtime"]}
