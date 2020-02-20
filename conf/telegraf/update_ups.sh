@@ -27,7 +27,6 @@ tags=(
   ups=${1%%@*}
 )
 fields=(
-  status=${vars["ups.status"]}
   load=${vars["ups.load"]}
   battery_charge=${vars["battery.charge"]}
   battery_charge_low=${vars["battery.charge.low"]}
