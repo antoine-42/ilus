@@ -36,6 +36,8 @@ fields=(
   input_transfer_high=${vars["input.transfer.high"]}
   input_transfer_low=${vars["input.transfer.low"]}
   outlet_power=${vars["outlet.power"]}
+  output_voltage=${vars["output.voltage"]}
+  output_voltage_nominal=${vars["output.voltage.nominal"]}
 )
 time=$(date +%s%N)
 
