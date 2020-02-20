@@ -28,14 +28,13 @@ fields=(
   status=${vars["ups.status"]}
   load=${vars["ups.load"]}
   battery_charge=${vars["battery.charge"]}
+  battery_charge_low=${vars["battery.charge.low"]}
   battery_runtime=${vars["battery.runtime"]}
-  battery_runtime_low=${vars["battery.runtime.low"]}
-  battery_voltage=${vars["battery.voltage"]}
-  battery_voltage_nominal=${vars["battery.voltage.nominal"]}
-  input_voltage=${vars["input.voltage"]}
-  input_voltage_nominal=${vars["input.voltage.nominal"]}
-  timer_reboot=${vars["ups.timer.reboot"]:--1}
+  timer_start=${vars["ups.timer.start"]:--1}
   timer_shutdown=${vars["ups.timer.shutdown"]:--1}
+  input_transfer_high=${vars["input.transfer.high"]}
+  input_transfer_low=${vars["input.transfer.low"]}
+  outlet_power=${vars["outlet.power"]}
 )
 time=$(date +%s%N)
 
