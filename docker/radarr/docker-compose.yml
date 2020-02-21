@@ -11,5 +11,6 @@ services:
       - /var/lib/ilus/radarr:/config
       - /storage/media/movies:/movies
       - /storage/temp/radarr:/downloads/radarr
+      - /storage/temp/movies:/downloads/movies
     ports:
       - 7878:7878

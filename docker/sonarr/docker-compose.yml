@@ -12,5 +12,6 @@ services:
       - /var/lib/ilus/sonarr:/config
       - /storage/media/series:/tv
       - /storage/temp/sonarr:/downloads/sonarr
+      - /storage/temp/series:/downloads/series
     ports:
       - 8989:8989
