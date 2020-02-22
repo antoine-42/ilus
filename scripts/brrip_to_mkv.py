@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Convert all BDMV downloads by radarr to mkv files, with no quality loss.
 The mkvs are then automatically imported by Radarr.
 
