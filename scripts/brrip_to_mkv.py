@@ -93,7 +93,7 @@ def convert_bdmv(movie_path, stream_path):
         # Keep radarr from copying the file until conversion is finished.
         os.rename(output + ".part", output)
         return True, movie_file_ratio
-    print("{}: file size is {}GB, {}% of movie folder size. Movie is fucked up, conversion impossible.".format(
+    print("{}: biggest file size is {}GB, {}% of movie folder size. Movie is fucked up, conversion impossible.".format(
         movie_file_path, round(file_size / 1000000000, 1),  round(movie_file_ratio * 100, 1)))
     return False, movie_file_ratio
 
