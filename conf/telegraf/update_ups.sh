@@ -2,7 +2,7 @@
 #
 # Query NUT UPS status and output in InfluxDB Line Protocol
 #
-# Usage: ups.sh upsname[@hostname[:port]]
+# Usage: update_ups.sh upsname[@hostname[:port]]
 # (same as `upsc`, see https://networkupstools.org/docs/man/upsc.html)
 #
 # Adapted from https://yegor.pomortsev.com/post/monitoring-everything/
