@@ -35,4 +35,4 @@ fields=(
 )
 time=$(date +%s%N)
 
-echo "transmission, $(join , ${fields[@]}) $time"
+echo "transmission, $(join "" ${fields[@]}) $time"
