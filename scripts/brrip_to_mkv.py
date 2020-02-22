@@ -9,7 +9,7 @@ import os
 import time
 import subprocess
 
-ROOT = "/raid"
+ROOT = "/storage"
 RADARR_DL_DIR = os.path.join(ROOT, "temp/radarr")
 STREAM_PATH = "BDMV/STREAM"
 
