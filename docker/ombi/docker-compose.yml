@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  ombi:
+    image: linuxserver/ombi
+    container_name: ombi
+    environment:
+      - PUID=1000
+      - PGID=998
+      - TZ=Europe/Paris
+    volumes:
+      - /var/lib/ilus/ombi:/config
+    ports:
+      - 3579:3579
