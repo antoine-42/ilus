@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  organizr:
+    image: linuxserver/organizr
+    container_name: organizr
+    environment:
+      - PUID=1000
+      - PGID=998
+      - TZ=Europe/Paris
+    volumes:
+      - /var/lib/ilus/organizr:/config
+    ports:
+      - 9983:80
