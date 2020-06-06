@@ -53,13 +53,13 @@ sudo systemctl daemon-reload
 Start the services:
 
 ```bash
-sudo systemctl start  ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab grafana home-assistant
+sudo systemctl start  ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud gitlab grafana home-assistant
 ```
 
 Enable the services for autostart:
 
 ```bash
-sudo systemctl enable ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian nextcloud gitlab grafana home-assistant
+sudo systemctl enable ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud gitlab grafana home-assistant
 ```
 
 ### Telegraf
