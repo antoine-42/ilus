@@ -8,15 +8,16 @@ services:
       - "53:53/tcp"
       - "53:53/udp"
       - "67:67/udp"
-#      - "80:80/tcp"
-#      - "443:443/tcp"
+      - "29170:80/tcp"
+      - "29171:443/tcp"
     environment:
       - TZ=Europe/Paris
     volumes:
       - '/var/lib/ilus/pi-hole/conf:/etc/pihole/'
       - '/var/lib/ilus/pi-hole/dnsmasq:/etc/dnsmasq.d/'
     dns:
-      - 127.0.0.1
       - 1.1.1.1
+      - 9.9.9.9
+    DNSSEC: True
     cap_add:
       - NET_ADMIN
