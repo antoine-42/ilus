@@ -5,11 +5,10 @@ services:
     container_name: pihole
     image: pihole/pihole:latest
     ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "67:67/udp"
-      - "29170:80/tcp"
-      - "29171:443/tcp"
+      - 192.168.0.20:53:53
+      - 192.168.0.20:67:67
+      - 192.168.0.20:80:80
+      - 192.168.0.20:443:443
     environment:
       - TZ=Europe/Paris
     volumes:

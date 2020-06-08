@@ -7,10 +7,6 @@ Scripts and config files for my media server.
 
 First, install [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/).
 
-Build the needed images:
-
-`docker build -t antoine42/telegraf ./docker/grafana/telegraf`
-
 ### Local docker-compose files
 
 create the local config files that contain sensitive information:
@@ -33,6 +29,18 @@ sudo chown antoine:docker ./
 ```
 
 If necessary, migrate the old config files to these directories. Check the documentation for the relevant application for more information.
+
+### Additional configuration
+
+#### Pi-Hole
+
+Pi-hole has to bind to the 80 and 443 ports, which is a problem since Nginx wants that too. To solve that, add a second IP to the machine:
+
+```bash
+sudo ip addr add <unused ip>/<netmask> dev enpxxx
+```
+
+and use this ip in the pi-hole docker-compose file. Use the other IP in the Nginx docker-compose file.
 
 ### Systemd services
 
