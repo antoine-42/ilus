@@ -17,6 +17,5 @@ services:
     dns:
       - 1.1.1.1
       - 9.9.9.9
-    DNSSEC: True
     cap_add:
       - NET_ADMIN
