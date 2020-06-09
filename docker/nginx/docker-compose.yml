@@ -19,6 +19,7 @@ services:
       - STAGING=false #optional
     volumes:
       - /var/lib/ilus/nginx:/config
+      - /var/log/auth.log:/config/log/auth.log # fail2ban SSH
     ports:
       - 192.168.0.15:443:443
       - 192.168.0.15:80:80
