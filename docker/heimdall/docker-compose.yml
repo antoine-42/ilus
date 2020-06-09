@@ -1,0 +1,14 @@
+version: "2.1"
+
+services:
+  heimdall:
+    image: linuxserver/heimdall
+    container_name: heimdall
+    environment:
+      - PUID=1000
+      - PGID=998
+      - TZ=Europe/Paris
+    volumes:
+      - /var/lib/ilus/heimdall:/config
+    ports:
+      - 29180:80
