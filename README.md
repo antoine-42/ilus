@@ -34,10 +34,19 @@ If necessary, migrate the old config files to these directories. Check the docum
 
 #### Pi-Hole
 
-Pi-hole has to bind to the 80 and 443 ports, which is a problem since Nginx wants that too. To solve that, add a second IP to the machine:
+Pi-hole has to bind to the 80 and 443 ports, which is a problem since Nginx wants that too. To solve that, add a second IP to the machine. Add to the end of `/etc/network/interfaces`:
 
-```bash
-sudo ip addr add <unused ip>/<netmask> dev enpxxx
+```
+    up   ip addr add <free ip adress>/<netmask> dev <interface>
+    down ip addr del <everything else same as previous line>
+```
+
+`/etc/network/interfaces` should look like:
+
+```
+iface enp6s0 inet dhcp
+    up   ip addr add 192.168.0.20/24 dev enp6s0
+    down ip addr del 192.168.0.20/24 dev enp6s0
 ```
 
 and use this ip in the pi-hole docker-compose file. Use the other IP in the Nginx docker-compose file.
@@ -61,13 +70,13 @@ sudo systemctl daemon-reload
 Start the services:
 
 ```bash
-sudo systemctl start ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant
+sudo systemctl start ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant Organizr
 ```
 
 Enable the services for autostart:
 
 ```bash
-sudo systemctl enable ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant
+sudo systemctl enable ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant Organizr
 ```
 
 ### Telegraf
