@@ -70,13 +70,13 @@ sudo systemctl daemon-reload
 Start the services:
 
 ```bash
-sudo systemctl start unifi-controller ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant organizr heimdall
+sudo systemctl start unifi-controller ddclient nginx pi-hole openvpn plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant organizr heimdall
 ```
 
 Enable the services for autostart:
 
 ```bash
-sudo systemctl enable unifi-controller ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant organizr heimdall
+sudo systemctl enable unifi-controller ddclient nginx pi-hole openvpn plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant organizr heimdall
 ```
 
 ### Telegraf
@@ -206,7 +206,13 @@ docker image prune
     - [DDclient](https://hub.docker.com/r/linuxserver/ddclient)
     - [Nginx with let's encrypt](https://github.com/linuxserver/docker-letsencrypt/blob/master/README.md)
     - [Pie-hole](https://github.com/pi-hole/docker-pi-hole/)
+    - [OpenVpn](https://hub.docker.com/r/linuxserver/openvpn-as/)
+    - [Unifi Controller](https://hub.docker.com/r/linuxserver/unifi)
 
+- Monitoring, dashboards
+    - [Grafana](https://grafana.com/docs/grafana/latest/installation/docker/)
+    - [Heimdall](https://hub.docker.com/r/linuxserver/heimdall)
+    - [Organizr](https://hub.docker.com/r/linuxserver/organizr)
 
 - Media server:
     - [Plex](https://github.com/plexinc/pms-docker)
@@ -217,17 +223,12 @@ docker image prune
     - [Sonarr](https://hub.docker.com/r/linuxserver/sonarr)
     - [Radarr](https://hub.docker.com/r/linuxserver/radarr)
     - [Lidarr](https://hub.docker.com/r/linuxserver/lidarr)
+    - [Ombi](https://hub.docker.com/r/linuxserver/ombi)
     - [LazyLibrarian](https://hub.docker.com/r/linuxserver/lazylibrarian)
-    
 
 - Self-hosted SaaS:
     - [NextCloud](https://hub.docker.com/_/nextcloud/), [docker-compose source](https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/insecure/postgres/apache/docker-compose.yml)
     - [GitLab](https://docs.gitlab.com/omnibus/docker/)
-
-
-- Monitoring
-    - [Grafana](https://grafana.com/docs/grafana/latest/installation/docker/)
-
 
 - Home automation:
     - [Home assistant](https://www.home-assistant.io/docs/installation/docker/)

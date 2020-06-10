@@ -1,0 +1,17 @@
+version: "2.1"
+services:
+  openvpn-as:
+    image: linuxserver/openvpn-as
+    container_name: openvpn
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=998
+      - TZ=Europe/Paris
+    volumes:
+      - /var/lib/ilus/openvpn:/config
+    ports:
+      - 943:943 # Web interface port
+      - 9443:9443
+      - 1194:1194/udp
