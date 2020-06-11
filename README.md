@@ -207,7 +207,7 @@ docker image prune
     - [Nginx with let's encrypt](https://github.com/linuxserver/docker-letsencrypt/blob/master/README.md)
     - [Pie-hole](https://github.com/pi-hole/docker-pi-hole/)
     - [OpenVpn](https://hub.docker.com/r/linuxserver/openvpn-as/)
-    - [Unifi Controller](https://hub.docker.com/r/linuxserver/unifi)
+    - [Unifi Controller](https://hub.docker.com/r/linuxserver/unifi-controller)
 
 - Monitoring, dashboards
     - [Grafana](https://grafana.com/docs/grafana/latest/installation/docker/)
