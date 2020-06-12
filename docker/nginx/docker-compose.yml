@@ -11,7 +11,7 @@ services:
       - PGID=998
       - TZ=Europe/Paris
       - URL=antoine-dujardin.com
-      - EXTRA_DOMAINS=*.antoine-dujardin.com
+      - EXTRA_DOMAINS=*.antoine-dujardin.com,*.rocket-comparator.com
       - VALIDATION=dns
       - DNSPLUGIN=cloudflare
       - EMAIL=antoinedujardin42@gmail.com
