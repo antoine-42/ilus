@@ -70,13 +70,13 @@ sudo systemctl daemon-reload
 Start the services:
 
 ```bash
-sudo systemctl start unifi-controller ddclient nginx pi-hole openvpn plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant organizr heimdall
+sudo systemctl start watchtower unifi-controller ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant heimdall
 ```
 
 Enable the services for autostart:
 
 ```bash
-sudo systemctl enable unifi-controller ddclient nginx pi-hole openvpn plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant organizr heimdall
+sudo systemctl enable watchtower unifi-controller ddclient nginx pi-hole plex tautulli jellyfin transmission jackett sonarr radarr lidarr lazylibrarian ombi nextcloud grafana home-assistant heimdall
 ```
 
 ### Telegraf
