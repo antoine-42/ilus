@@ -20,6 +20,7 @@ services:
     volumes:
       - /var/lib/ilus/nginx:/config
       - /var/log/auth.log:/config/log/auth.log # fail2ban SSH
+      - /home/antoine/git/rocket_comparator:/rocket_comparator
     ports:
       - 192.168.0.15:443:443
       - 192.168.0.15:80:80

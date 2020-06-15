@@ -4,4 +4,3 @@ services:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/antoine/.docker/config.json:/config.json
