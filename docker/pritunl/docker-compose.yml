@@ -1,34 +1,17 @@
 version: '3'
 
 services:
-  mongo:
-    image: mongo:latest
-    container_name: pritunl_db
-    hostname: pritunl_db
-    network_mode: bridge
-    volumes:
-      - /var/lib/ilus/pritunl/db:/data/db
-
   pritunl:
-    image: goofball222/pritunl:latest
+    image: jippi/pritunl
     container_name: pritunl
-    hostname: pritunl
-    depends_on:
-        - mongo
-    network_mode: bridge
     privileged: true
-    sysctls:
-      - net.ipv6.conf.all.disable_ipv6=0
-    links:
-      - mongo
     volumes:
-      - /etc/localtime:/etc/localtime:ro
+      - /var/lib/ilus/pritunl/mongodb:/var/lib/mongodb
+      - /var/lib/ilus/pritunl/pritunl:/var/lib/pritunl
+      - /var/lib/ilus/pritunl/pritunl.conf:/etc/pritunl.conf
     ports:
       - 29185:80
       - 29186:443
       - 1194:1194
       - 1194:1194/udp
       - 1195:1195/udp
-    environment:
-      - TZ=Europe/Paris
-      - REVERSE_PROXY=true
