@@ -37,7 +37,7 @@ services:
     container_name: elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:5.6.14
     volumes:
-      - /var/lib/ilus/diskover/elasticsearch:/usr/share/elasticsearch/data
+      - data01:/usr/share/elasticsearch/data
     environment:
       - bootstrap.memory_lock=true
       - discovery.type=single-node
@@ -56,6 +56,10 @@ services:
       - /var/lib/ilus/diskover/redis:/data
     networks:
       - diskover
+
+volumes:
+  data01:
+    driver: local
 
 networks:
   diskover:
