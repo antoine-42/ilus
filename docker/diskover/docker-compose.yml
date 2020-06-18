@@ -14,14 +14,13 @@ services:
       - ES_PORT=9200
       - ES_USER=elastic
       - ES_PASS=changeme
-      - INDEX_NAME=diskover-
       - DISKOVER_OPTS=
       - WORKER_OPTS=
       - RUN_ON_START=true
       - USE_CRON=true
     volumes:
       - /var/lib/ilus/diskover/config:/config
-      - /var/lib/ilus/diskover/data:/data
+      - /:/data:ro
     ports:
       - 29185:80
       - 9181:9181
