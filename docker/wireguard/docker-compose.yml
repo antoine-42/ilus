@@ -1,5 +1,3 @@
-version: "2"
-
 version: "2.1"
 services:
   wireguard:
@@ -22,5 +20,13 @@ services:
       - /lib/modules:/lib/modules
     ports:
       - 51820:51820/udp
+    networks:
+      - wireguard
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
+
+networks:
+  wireguard:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 1420

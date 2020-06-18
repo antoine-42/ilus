@@ -237,3 +237,20 @@ docker image prune
 
 - Home automation:
     - [Home assistant](https://www.home-assistant.io/docs/installation/docker/)
+
+
+# Raspberry Pi
+
+## Monitoring
+
+Install Telegraf:
+
+```bash
+curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+echo "deb https://repos.influxdata.com/debian <release, ie stretch, buster...> stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+sudo apt-get update
+sudo apt-get install telegraf
+```
+
+To get the release, run `lsb_release -a`. Use the Codename.
+
