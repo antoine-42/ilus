@@ -10,8 +10,8 @@ services:
       - /var/lib/ilus/pritunl/pritunl:/var/lib/pritunl
       - /var/lib/ilus/pritunl/pritunl.conf:/etc/pritunl.conf
     ports:
-      - 29185:80
-      - 29186:443
+      - 29190:80
+      - 29191:443
       - 1194:1194
       - 1194:1194/udp
       - 1195:1195/udp
