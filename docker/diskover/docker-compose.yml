@@ -14,6 +14,9 @@ services:
       - ES_PORT=9200
       - ES_USER=elastic
       - ES_PASS=changeme
+      - INDEX_NAME=diskover-
+      - DISKOVER_OPTS=
+      - WORKER_OPTS=
       - RUN_ON_START=true
       - USE_CRON=true
     volumes:
@@ -23,10 +26,13 @@ services:
       - 29185:80
       - 9181:9181
       - 9999:9999
+    networks:
+      - diskover
     mem_limit: 4096m
     depends_on:
       - elasticsearch
       - redis
+
   elasticsearch:
     container_name: elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:5.6.9
@@ -35,12 +41,20 @@ services:
     environment:
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms2048m -Xmx2048m"
+    networks:
+      - diskover
     ulimits:
       memlock:
         soft: -1
         hard: -1
+
   redis:
     container_name: redis
     image: redis:alpine
     volumes:
       - /var/lib/ilus/diskover/redis:/data
+    networks:
+      - diskover
+
+networks:
+  diskover:
