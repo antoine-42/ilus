@@ -11,9 +11,9 @@ services:
     environment:
       TZ: Europe/Paris
       EULA: "TRUE"
-      ENABLE_AUTOPAUSE: TRUE
+      ENABLE_AUTOPAUSE: "TRUE"
       AUTOPAUSE_TIMEOUT_EST: 300
       AUTOPAUSE_TIMEOUT_INIT: 300
-      SERVER_NAME: Ilus
-      USE_AIKAR_FLAGS: true
+      SERVER_NAME: "Ilus"
+      USE_AIKAR_FLAGS: "true"
     restart: always
