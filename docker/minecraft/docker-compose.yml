@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    container_name: minecraft-server-vanilla
+    ports:
+      - "25565:25565"
+    volumes:
+      - "/var/lib/ilus/minecraft-server/vanilla-latest:/data"
+    environment:
+      TZ: Europe/Paris
+      EULA: "TRUE"
+      ENABLE_AUTOPAUSE: TRUE
+      AUTOPAUSE_TIMEOUT_EST: 300
+      AUTOPAUSE_TIMEOUT_INIT: 300
+      SERVER_NAME: Ilus
+      USE_AIKAR_FLAGS: true
+    restart: always
