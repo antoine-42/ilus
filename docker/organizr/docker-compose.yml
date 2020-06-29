@@ -12,3 +12,4 @@ services:
       - /var/lib/ilus/organizr:/config
     ports:
       - 9983:80
+    restart: unless-stopped

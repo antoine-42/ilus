@@ -3,11 +3,11 @@ version: '3'
 services:
   db:
     image: postgres
-    restart: always
     volumes:
       - /var/lib/ilus/nextcloud/db:/var/lib/postgresql/data
     env_file:
       - db.env
+    restart: unless-stopped
 
   app:image: nextcloud:apache
     ports:
@@ -20,3 +20,4 @@ services:
       - db.env
     depends_on:
       - db
+    restart: unless-stopped

@@ -25,6 +25,7 @@ services:
     environment:
       - INFLUXDB_DB=telegraf
       - INFLUXDB_ADMIN_ENABLED=true
+    restart: unless-stopped
 
 networks:
   monitoring:

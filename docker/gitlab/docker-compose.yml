@@ -17,3 +17,4 @@ services:
       - '/var/lib/ilus/gitlab/config:/etc/gitlab'
       - '/var/lib/ilus/gitlab/logs:/var/log/gitlab'
       - '/var/lib/ilus/gitlab/data:/var/opt/gitlab'
+    restart: unless-stopped

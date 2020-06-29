@@ -13,3 +13,4 @@ services:
       - /storage/temp/lazylibrarian:/downloads/lazylibrarian
     ports:
       - 5299:5299
+    restart: unless-stopped

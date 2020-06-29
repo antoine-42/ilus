@@ -31,6 +31,7 @@ services:
     depends_on:
       - elasticsearch
       - redis
+    restart: unless-stopped
 
   elasticsearch:
     container_name: elasticsearch
@@ -47,6 +48,7 @@ services:
       memlock:
         soft: -1
         hard: -1
+    restart: unless-stopped
 
   redis:
     container_name: redis
@@ -55,6 +57,7 @@ services:
       - /var/lib/ilus/diskover/redis:/data
     networks:
       - diskover
+    restart: unless-stopped
 
 volumes:
   data01:

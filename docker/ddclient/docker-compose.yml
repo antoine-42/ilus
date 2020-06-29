@@ -9,3 +9,4 @@ services:
       - TZ=Europe/Paris
     volumes:
       - /var/lib/ilus/ddclient:/config
+    restart: unless-stopped

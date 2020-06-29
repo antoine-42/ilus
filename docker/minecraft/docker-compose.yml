@@ -16,4 +16,4 @@ services:
       AUTOPAUSE_TIMEOUT_INIT: 300
       SERVER_NAME: "Ilus"
       USE_AIKAR_FLAGS: "true"
-    restart: always
+    restart: unless-stopped

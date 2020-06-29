@@ -8,3 +8,4 @@ services:
       - /var/lib/ilus/jellyfin:/config
       - /var/cache/ilus/jellyfin:/cache
       - /storage/media:/raid/media
+    restart: unless-stopped

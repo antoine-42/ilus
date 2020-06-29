@@ -10,3 +10,4 @@ services:
       - /var/lib/ilus/plex:/config
       - /temp/ilus/plex:/transcode
       - /storage/media:/raid/media
+    restart: unless-stopped

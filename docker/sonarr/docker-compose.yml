@@ -15,3 +15,4 @@ services:
       - /storage/temp/series:/downloads/series
     ports:
       - 8989:8989
+    restart: unless-stopped

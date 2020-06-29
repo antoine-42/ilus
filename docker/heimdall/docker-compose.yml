@@ -12,3 +12,4 @@ services:
       - /var/lib/ilus/heimdall:/config
     ports:
       - 29180:80
+    restart: unless-stopped

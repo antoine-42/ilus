@@ -13,3 +13,4 @@ services:
     volumes:
       - /var/lib/ilus/tautulli:/config
       - /var/lib/ilus/plex/Library/Application Support/Plex Media Server/Logs:/plex_logs:ro
+    restart: unless-stopped

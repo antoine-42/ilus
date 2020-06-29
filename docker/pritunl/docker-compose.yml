@@ -16,3 +16,4 @@ services:
       - 1194:1194/udp
       - 1195:1195/udp
       - 12109:12109
+    restart: unless-stopped

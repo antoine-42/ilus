@@ -14,3 +14,4 @@ services:
       - /storage/temp/movies:/downloads/movies
     ports:
       - 7878:7878
+    restart: unless-stopped

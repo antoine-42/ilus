@@ -13,3 +13,4 @@ services:
       - /storage/temp/lidarr:/downloads/lidarr
     ports:
       - 8686:8686
+    restart: unless-stopped
