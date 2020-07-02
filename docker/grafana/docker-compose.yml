@@ -10,7 +10,8 @@ services:
     environment:
       - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource
     volumes:
-      - /var/lib/ilus/monitoring/grafana:/var/lib/grafana
+      - /var/lib/ilus/monitoring/grafana/data:/var/lib/grafana
+      - /var/lib/ilus/monitoring/grafana/config:/etc/grafana
 
   influxdb:
     image: influxdb
