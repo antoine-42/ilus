@@ -9,8 +9,8 @@ services:
       - TZ=Europe/Paris
     volumes:
       - /var/lib/ilus/lazylibrarian:/config
-      - /storage/media/ebooks/books:/books
-      - /storage/temp/lazylibrarian:/downloads/lazylibrarian
+      - /mnt/storage/media/ebooks/books:/books
+      - /mnt/storage/temp/lazylibrarian:/downloads/lazylibrarian
     ports:
       - 5299:5299
     restart: unless-stopped

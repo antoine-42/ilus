@@ -10,9 +10,9 @@ services:
       - TZ=Europe/Paris
     volumes:
       - /var/lib/ilus/sonarr:/config
-      - /storage/media/series:/tv
-      - /storage/temp/sonarr:/downloads/sonarr
-      - /storage/temp/series:/downloads/series
+      - /mnt/storage/media/series:/tv
+      - /mnt/storage/temp/sonarr:/downloads/sonarr
+      - /mnt/storage/temp/series:/downloads/series
     ports:
       - 8989:8989
     restart: unless-stopped

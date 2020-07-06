@@ -9,5 +9,5 @@ services:
     volumes:
       - /var/lib/ilus/plex:/config
       - /temp/ilus/plex:/transcode
-      - /storage/media:/raid/media
+      - /mnt/storage/media:/raid/media
     restart: unless-stopped

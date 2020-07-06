@@ -9,8 +9,8 @@ services:
       - TZ=Europe/Paris
     volumes:
       - /var/lib/ilus/lidarr:/config
-      - /storage/media/music:/music
-      - /storage/temp/lidarr:/downloads/lidarr
+      - /mnt/storage/media/music:/music
+      - /mnt/storage/temp/lidarr:/downloads/lidarr
     ports:
       - 8686:8686
     restart: unless-stopped

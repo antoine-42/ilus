@@ -7,5 +7,5 @@ services:
     volumes:
       - /var/lib/ilus/jellyfin:/config
       - /var/cache/ilus/jellyfin:/cache
-      - /storage/media:/raid/media
+      - /mnt/storage/media:/raid/media
     restart: unless-stopped
