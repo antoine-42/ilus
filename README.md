@@ -3,6 +3,32 @@ Scripts and config files for my media server.
 
 ## Deployment
 
+### Create directories
+
+```bash
+sudo mkdir /mnt/storage
+cd /mnt/storage
+sudo chown antoine:docker ./
+mkdir media temp software documents
+cd media
+mkdir movies series music books
+cd ../temp
+mkdir sonarr radarr lidarr lazylibrarian movies series music books software documents misc
+```
+
+### Install Kubernetes
+
+Install a [container runtime](https://kubernetes.io/docs/setup/production-environment/container-runtimes/) (skip this if docker is already installed), [kubeadm, kubelet, and kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/), 
+
+kubeadm init --control-plane-endpoint 192.168.0.15 --cri-socket /var/run/docker.sock
+
+kubeadm join 192.168.0.15:6443 --token ls8dq5.7qh6efwknshwlm1k \
+--discovery-token-ca-cert-hash sha256:550e554acba64ff729481909b8c9564f8c34c8bc4bd28b4661299753b6c60de4 \
+--control-plane 
+
+kubeadm join 192.168.0.15:6443 --token ls8dq5.7qh6efwknshwlm1k \
+--discovery-token-ca-cert-hash sha256:550e554acba64ff729481909b8c9564f8c34c8bc4bd28b4661299753b6c60de4
+
 ### Install docker and build the images
 
 First, install [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/).
