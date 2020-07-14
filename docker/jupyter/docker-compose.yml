@@ -1,0 +1,17 @@
+version: "2"
+services:
+  jupyter-datascience-notebook:
+    image: jupyter/datascience-notebook
+    container_name: jupyter-datascience-notebook
+    environment:
+      - NB_UID=1000
+      - NB_GID=998
+      - CHOWN_HOME=yes
+      - CHOWN_HOME_OPTS=-R
+      - TZ=Europe/Paris
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - /var/lib/ilus/jupyter:/home/jovyan/work
+    ports:
+      - 8888:8888
+    restart: unless-stopped
