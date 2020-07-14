@@ -13,5 +13,5 @@ services:
     volumes:
       - /var/lib/ilus/jupyter:/home/jovyan/work
     ports:
-      - 8888:8888
+      - 29195:8888
     restart: unless-stopped
