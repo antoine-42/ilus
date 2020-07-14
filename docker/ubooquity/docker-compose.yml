@@ -1,0 +1,20 @@
+
+version: "2.1"
+services:
+  ubooquity:
+    image: linuxserver/ubooquity
+    container_name: ubooquity
+    environment:
+      - PUID=1000
+      - PGID=998
+      - TZ=Europe/Paris
+      - MAXMEM=maxmem
+    volumes:
+      - /var/lib/ilus/ubooquity:/config
+      - /mnt/storage/media/books/ebooks:/books
+      - /mnt/storage/media/books/comics:/comics
+      - /mnt/storage/media/books/misc:/files
+    ports:
+      - 2202:2202
+      - 2203:2203
+    restart: unless-stopped
