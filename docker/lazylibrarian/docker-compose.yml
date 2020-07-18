@@ -9,7 +9,8 @@ services:
       - TZ=Europe/Paris
     volumes:
       - /var/lib/ilus/lazylibrarian:/config
-      - /mnt/storage/media/ebooks/books:/books
+      - /mnt/storage/media/books/ebooks:/books
+      - /mnt/storage/media/books/audiobooks:/audiobooks
       - /mnt/storage/temp/lazylibrarian:/downloads/lazylibrarian
     ports:
       - 5299:5299
