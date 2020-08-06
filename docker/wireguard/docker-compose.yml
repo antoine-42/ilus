@@ -10,7 +10,7 @@ services:
       - PUID=1000
       - PGID=998
       - TZ=Europe/Paris
-      - SERVERURL=wireguard.antoine-dujardin.com #optional
+      - SERVERURL=wireguard.ilus.pw #optional
       - SERVERPORT=51820 #optional
       - PEERS=10 #optional
       - PEERDNS=auto #optional

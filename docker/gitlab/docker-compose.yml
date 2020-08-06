@@ -4,10 +4,10 @@ services:
   gitlab:
     image: 'gitlab/gitlab-ce:latest'
     container_name: gitlab
-    hostname: 'gitlab.antoine-dujardin.com'
+    hostname: 'gitlab.ilus.pw'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'https://gitlab.antoine-dujardin.com'
+        external_url 'https://gitlab.ilus.pw'
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
       - '29175:80'
