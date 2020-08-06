@@ -1,23 +1,33 @@
-version: '3'
+version: "2.1"
 
 services:
-  db:
+  nextcloud_db:
     image: postgres
     volumes:
       - /var/lib/ilus/nextcloud/db:/var/lib/postgresql/data
-    env_file:
-      - db.env
+    environment:
+      - POSTGRES_DB=nextcloud
+      - POSTGRES_USER=nextcloud
+      - POSTGRES_PASSWORD=nextcloud
+    networks:
+      - nextcloud
     restart: unless-stopped
 
-  app:image: nextcloud:apache
-    ports:
-      - 8081:80
-    volumes:
-      - /var/lib/ilus/nextcloud/app:/var/www/html
+  nextcloud:
+    image: linuxserver/nextcloud
+    container_name: nextcloud
     environment:
-      - POSTGRES_HOST=db
-    env_file:
-      - db.env
-    depends_on:
-      - db
+      - PUID=1000
+      - PGID=998
+      - TZ=Europe/Paris
+    volumes:
+      - /var/lib/ilus/nextcloud/config:/config
+      - /var/lib/ilus/nextcloud/data:/data
+    ports:
+      - 29201:443
+    networks:
+      - nextcloud
     restart: unless-stopped
+
+networks:
+  nextcloud:
