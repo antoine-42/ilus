@@ -279,4 +279,3 @@ sudo apt-get install telegraf
 ```
 
 To get the release, run `lsb_release -a`. Use the Codename.
-
