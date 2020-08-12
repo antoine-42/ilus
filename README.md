@@ -276,6 +276,7 @@ curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
 echo "deb https://repos.influxdata.com/debian <release, ie stretch, buster...> stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
 sudo apt-get update
 sudo apt-get install telegraf
+sudo usermod -a -G video telegraf
 ```
 
 To get the release, run `lsb_release -a`. Use the Codename.
