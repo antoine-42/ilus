@@ -1,4 +1,4 @@
-$ sudo upsc eaton-ellipse-650@127.0.0.1
+debian$ sudo upsc eaton-ellipse-650@127.0.0.1
 battery.charge: 100
 battery.charge.low: 20
 battery.runtime: 2156
