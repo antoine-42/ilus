@@ -26,11 +26,13 @@ sudo apt install curl git zsh htop rsync smartmontools lm-sensors    apt-transpo
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo usermod -aG docker $USER
 
-mkdir git
-cd git
+mkdir ~/git
+cd ~/git
 git clone --recurse-submodules -j8 git@github.com:antoine-42/projects.git
 lsblk -f
 # copy the volume uuid
 sudo nano /etc/fstab
 # add
 # UUID=<volume uuid>       /mnt/storage    ext4 defaults,auto      0       2
+sudo cp ~/git/projects/ilus/conf/debian/telegraf/* /etc/telegraf/
+sudo systemctl restart telegraf
