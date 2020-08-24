@@ -19,9 +19,13 @@ test $VERSION_ID = "7" && echo "deb https://repos.influxdata.com/debian wheezy s
 test $VERSION_ID = "8" && echo "deb https://repos.influxdata.com/debian jessie stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
 test $VERSION_ID = "9" && echo "deb https://repos.influxdata.com/debian stretch stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
 test $VERSION_ID = "10" && echo "deb https://repos.influxdata.com/debian buster stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+# newer kernel
+echo "deb http://ftp.debian.org/debian $(lsb_release -cs)-backports main" | sudo tee -a /etc/apt/sources.list > /dev/null
+
 
 sudo apt update && sudo apt upgrade
-sudo apt install curl git zsh htop rsync smartmontools lm-sensors    apt-transport-https ca-certificates gnupg-agent software-properties-common    docker-ce docker-ce-cli containerd.io    telegraf
+sudo apt install curl git zsh htop rsync dnsutils smartmontools lm-sensors    apt-transport-https ca-certificates gnupg-agent software-properties-common    docker-ce docker-ce-cli containerd.io    telegraf
+sudo apt install linux-image-<latest version>
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo usermod -aG docker $USER
