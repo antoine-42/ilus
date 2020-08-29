@@ -24,7 +24,7 @@ echo "deb http://ftp.debian.org/debian $(lsb_release -cs)-backports main" | sudo
 
 
 sudo apt update && sudo apt upgrade
-sudo apt install curl git zsh htop rsync dnsutils smartmontools lm-sensors qemu-guest-agent    apt-transport-https ca-certificates gnupg-agent software-properties-common    docker-ce docker-ce-cli containerd.io    telegraf
+sudo apt install curl git zsh htop rsync dnsutils smartmontools lm-sensors qemu-guest-agent    apt-transport-https ca-certificates gnupg-agent software-properties-common    docker-ce docker-ce-cli containerd.io    nut telegraf
 sudo apt install linux-image-<latest version>
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

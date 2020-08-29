@@ -41,11 +41,14 @@ sudo qm set <VM ID> -scsi<+1> /dev/disk/by-uuid/<volume uuid>
 #    upsmon master
 #    actions = SET
 #    instcmds = ALL
+#
+# Add to /etc/nut/upsmon.conf:
+#MONITOR eaton-ellipse-eco-650@localhost 1 <account> <account password> master
 # Edit /etc/udev/rules.d/90-nut-ups.rules to allow the nut user to read from the usb device:
 #ACTION=="add", \
 #SUBSYSTEM=="usb", \
 #ATTR{idVendor}=="0463", ATTR{idProduct}=="ffff", \
 #MODE="0660", GROUP="nut"
 # Get the idProduct and idVendor with usb-devices.
-sudo systemctl restart nut-driver.service nut-server.service
+sudo systemctl restart nut-driver.service nut-server.service nut-monitor.service
 
