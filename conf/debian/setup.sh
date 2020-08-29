@@ -24,15 +24,18 @@ echo "deb http://ftp.debian.org/debian $(lsb_release -cs)-backports main" | sudo
 
 
 sudo apt update && sudo apt upgrade
-sudo apt install curl git zsh htop rsync dnsutils smartmontools lm-sensors    apt-transport-https ca-certificates gnupg-agent software-properties-common    docker-ce docker-ce-cli containerd.io    telegraf
+sudo apt install curl git zsh htop rsync dnsutils smartmontools lm-sensors qemu-guest-agent    apt-transport-https ca-certificates gnupg-agent software-properties-common    docker-ce docker-ce-cli containerd.io    telegraf
 sudo apt install linux-image-<latest version>
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo usermod -aG docker $USER
 
+# Clone projects
 mkdir ~/git
 cd ~/git
 git clone --recurse-submodules -j8 git@github.com:antoine-42/projects.git
+
+# Setup RAID
 lsblk -f
 # copy the volume uuid
 sudo nano /etc/fstab
@@ -40,3 +43,16 @@ sudo nano /etc/fstab
 # UUID=<volume uuid>       /mnt/storage    ext4 defaults,auto      0       2
 sudo cp ~/git/projects/ilus/conf/debian/telegraf/* /etc/telegraf/
 sudo systemctl restart telegraf
+
+# NUT
+#todo
+
+# Secondary IP adress
+# Add to /etc/network/interfaces:
+#iface <interface> inet dhcp
+#    up   ip addr add <ip>/<mask> dev <interface>
+#    down ip addr del <same ip>/<same mask> dev <interface>
+# For example:
+#iface ens18 inet dhcp
+#    up   ip addr add 192.168.0.25/24 dev ens18
+#    down ip addr del 192.168.0.25/24 dev ens18

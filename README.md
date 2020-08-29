@@ -70,9 +70,9 @@ Pi-hole has to bind to the 80 and 443 ports, which is a problem since Nginx want
 `/etc/network/interfaces` should look like:
 
 ```
-iface enp6s0 inet dhcp
-    up   ip addr add 192.168.0.20/24 dev enp6s0
-    down ip addr del 192.168.0.20/24 dev enp6s0
+iface ens18 inet dhcp
+    up   ip addr add 192.168.0.25/24 dev ens18
+    down ip addr del 192.168.0.25/24 dev ens18
 ```
 
 and use this ip in the pi-hole docker-compose file. Use the other IP in the Nginx docker-compose file.
@@ -143,10 +143,11 @@ sudo usermod -aG docker telegraf
 
 #### Temperature monitoring
 
-Install lm-sensors:
+Install lm-sensors and scan for sensors:
 
 ```bash
 sudo apt install lm-sensors
+sudo sensors-detect
 ```
 
 #### Finish
