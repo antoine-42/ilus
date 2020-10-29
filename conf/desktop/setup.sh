@@ -8,6 +8,9 @@ sudo systemctl start apcupsd.service
 sudo systemctl enable apcupsd.service
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Install kernel headers for all kernels
+sudo pacman -S $(pacman -Qsq "^linux" | grep "^linux[0-9]*[-rt]*$" | awk '{print $1"-headers"}' ORS=' ')
+
 # Uncomment/add Color in /etc/pacman.conf for colored output.
 # Run `visudo` and append `Defaults env_reset,timestamp_timeout=30` to the file to disable sudo timeout.
 
