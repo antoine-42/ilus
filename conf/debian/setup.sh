@@ -1,4 +1,5 @@
 sudo apt install sudo -y
+sudo adduser antoine
 sudo usermod -aG sudo antoine
 sudo su antoine
 
@@ -33,6 +34,8 @@ sudo usermod -aG docker $USER
 # Clone projects
 mkdir ~/git
 cd ~/git
+git config --global user.email "antoinedujardin42@gmail.com"
+git config --global user.name "Antoine Dujardin"
 git clone --recurse-submodules -j8 git@github.com:antoine-42/projects.git
 
 # Setup RAID

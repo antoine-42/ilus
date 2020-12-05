@@ -39,3 +39,5 @@ git config --global user.name "Antoine Dujardin"
 git config --global pull.rebase false
 mkdir git && cd git
 git clone --recurse-submodules -j8 git@github.com:antoine-42/projects.git
+
+echo "include /usr/share/nano/*.nanorc" > ~/.nanorc
