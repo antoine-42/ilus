@@ -35,6 +35,10 @@ def test():
         print("The radarr download directory isn't available. Please update it.")
         can_run = False
 
+    if not os.access(RADARR_DL_DIR, os.W_OK):
+        print("The radarr download directory isn't writable. Please fix it.")
+        can_run = False
+
     return can_run
 
 
@@ -91,6 +95,9 @@ def convert_bdmv(movie_path, stream_path):
     if movie_file_ratio > 0.7:
         print("Converting {} to mkv, file size is {}GB, {}% of movie folder size.".format(
             movie_file_path, round(file_size / 1000000000, 1),  round(movie_file_ratio * 100, 1)))
+        if not os.access(movie_file_path, os.W_OK):
+            print("The movie directory isn't writable. Please fix it.")
+            return False, movie_file_ratio
         # Call to mkvmerge
         mkvmerge_command = 'mkvmerge -q -o {output}.part --compression -1:none {input}'.format(
             output=output, input=movie_file_path)
@@ -116,13 +123,13 @@ if __name__ == "__main__":
                 # Don't import a file that has already been imported
                 curr_imported_mark = os.path.join(movie_path, ".imported")
                 if not os.path.isfile(curr_imported_mark):
-                    status = convert_bdmv(movie_path, stream_path)
-                    if status[0]:
+                    success, status = convert_bdmv(movie_path, stream_path)
+                    if success:
                         file = open(curr_imported_mark, 'w')
                         file.close()
                         converted += 1
                     else:
-                        not_converted.append((movie_dir, status[1]))
+                        not_converted.append((movie_dir, status))
         end_time = time.time()
         print("\ncouldn't import:")
         for tup in not_converted:
