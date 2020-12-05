@@ -21,10 +21,15 @@ def test():
     """
     can_run = True
 
-    mkvmerge_out = subprocess.run(["mkvmerge", "--version"], stdout=subprocess.PIPE)
-    if not mkvmerge_out.stdout.decode("utf-8").startswith("mkvmerge v"):
+    try:
+        mkvmerge_out = subprocess.run(["mkvmerge", "--version"], stdout=subprocess.PIPE)
+    except FileNotFoundError:
         print("It looks like mkvmerge isn't available. Please install mkvtoolnix")
         can_run = False
+    else:
+        if not mkvmerge_out.stdout.decode("utf-8").startswith("mkvmerge v"):
+            print("It looks like mkvmerge isn't available. Please install mkvtoolnix")
+            can_run = False
 
     if not os.path.isdir(RADARR_DL_DIR):
         print("The radarr download directory isn't available. Please update it.")
