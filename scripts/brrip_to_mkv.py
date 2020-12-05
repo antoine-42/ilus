@@ -131,7 +131,8 @@ if __name__ == "__main__":
                     else:
                         not_converted.append((movie_dir, status))
         end_time = time.time()
-        print("\ncouldn't import:")
-        for tup in not_converted:
-            print("    {1}: {0}".format(*tup))
+        if not_converted:
+            print("\ncouldn't import:")
+            for tup in not_converted:
+                print("    {1}: {0}".format(*tup))
         print("{} files converted in {} minutes. Exiting...".format(converted, (end_time - start_time) / 60))
