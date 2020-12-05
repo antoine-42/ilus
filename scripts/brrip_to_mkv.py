@@ -83,8 +83,7 @@ def convert_bdmv(movie_path, stream_path):
         os.remove(output)
     # Check if the download is finished
     if any([file for file in os.listdir(stream_path) if file.endswith(".part")]):
-        print("{}: download not finished.".format(
-            movie_path))
+        print("{}: download not finished.".format(movie_path))
         return False, "unfinished"
     # Get biggest file
     movie_file, file_size = get_biggest_file_in_dir(stream_path)
@@ -93,20 +92,33 @@ def convert_bdmv(movie_path, stream_path):
     # Check if the biggest file / total directory size ratio is too small.
     # It would mean that the m2ts files are split into many parts.
     if movie_file_ratio > 0.7:
-        print("Converting {} to mkv, file size is {}GB, {}% of movie folder size.".format(
-            movie_file_path, round(file_size / 1000000000, 1),  round(movie_file_ratio * 100, 1)))
+        print(
+            "Converting {} to mkv, file size is {}GB, {}% of movie folder size.".format(
+                movie_file_path,
+                round(file_size / 1000000000, 1),
+                round(movie_file_ratio * 100, 1),
+            )
+        )
         if not os.access(movie_file_path, os.W_OK):
             print("The movie directory isn't writable. Please fix it.")
             return False, movie_file_ratio
         # Call to mkvmerge
-        mkvmerge_command = 'mkvmerge -q -o {output}.part --compression -1:none {input}'.format(
-            output=output, input=movie_file_path)
+        mkvmerge_command = (
+            "mkvmerge -q -o {output}.part --compression -1:none {input}".format(
+                output=output, input=movie_file_path
+            )
+        )
         subprocess.run(mkvmerge_command.split(" "))
         # Keep radarr from copying the file until conversion is finished.
         os.rename(output + ".part", output)
         return True, movie_file_ratio
-    print("{}: biggest file size is {}GB, {}% of movie folder size. Movie is fucked up, conversion impossible.".format(
-        movie_file_path, round(file_size / 1000000000, 1),  round(movie_file_ratio * 100, 1)))
+    print(
+        "{}: biggest file size is {}GB, {}% of movie folder size. Movie is fucked up, conversion impossible.".format(
+            movie_file_path,
+            round(file_size / 1000000000, 1),
+            round(movie_file_ratio * 100, 1),
+        )
+    )
     return False, movie_file_ratio
 
 
@@ -125,7 +137,7 @@ if __name__ == "__main__":
                 if not os.path.isfile(curr_imported_mark):
                     success, status = convert_bdmv(movie_path, stream_path)
                     if success:
-                        file = open(curr_imported_mark, 'w')
+                        file = open(curr_imported_mark, "w")
                         file.close()
                         converted += 1
                     else:
@@ -135,4 +147,8 @@ if __name__ == "__main__":
             print("\ncouldn't import:")
             for tup in not_converted:
                 print("    {1}: {0}".format(*tup))
-        print("{} files converted in {} minutes. Exiting...".format(converted, (end_time - start_time) / 60))
+        print(
+            "{} files converted in {} minutes. Exiting...".format(
+                converted, (end_time - start_time) / 60
+            )
+        )
