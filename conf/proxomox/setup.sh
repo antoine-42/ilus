@@ -3,7 +3,9 @@ sudo adduser antoine
 sudo usermod -aG sudo antoine
 sudo su antoine
 
-sudo apt update && sudo apt upgrade
+# Update the apt repositories https://pve.proxmox.com/wiki/Package_Repositories
+
+sudo apt update && sudo apt upgrade && sudo apt autoremove
 sudo apt install curl git zsh htop rsync    mdadm nut
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
