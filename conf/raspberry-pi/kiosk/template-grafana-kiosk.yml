@@ -1,0 +1,11 @@
+general:
+  kiosk-mode: full
+  autofit: true
+
+target:
+  login-method: local
+  username: user
+  password: changeme
+  playlist: true
+  URL: https://grafana.ilus.pw/playlists/play/1?kiosk&autofitpanels
+  ignore-certificate-errors: false

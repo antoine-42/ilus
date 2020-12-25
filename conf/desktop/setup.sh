@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Install & updates
 sudo pacman -Syu
 sudo pacman -Rs gwenview kate khelpcenter konversation partitionmanager manjaro-hello okular partitionmanager yakuake
 sudo pacman -S \
@@ -25,6 +26,7 @@ sudo systemctl start apcupsd.service
 sudo systemctl enable apcupsd.service
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# QMK setup
 python3 -m pip install --user qmk
 qmk setup
 
@@ -34,10 +36,17 @@ sudo pacman -S $(pacman -Qsq "^linux" | grep "^linux[0-9]*[-rt]*$" | awk '{print
 # Uncomment/add Color in /etc/pacman.conf for colored output.
 # Run `visudo` and append `Defaults env_reset,timestamp_timeout=30` to the file to disable sudo timeout.
 
+# Git config & pull
 git config --global user.email "antoinedujardin42@gmail.com"
 git config --global user.name "Antoine Dujardin"
 git config --global pull.rebase false
 mkdir git && cd git
 git clone --recurse-submodules -j8 git@github.com:antoine-42/projects.git
 
+# Enable nano fancy colors
 echo "include /usr/share/nano/*.nanorc" > ~/.nanorc
+
+# Always autoselect the first valid certificate
+sudo mkdir /etc/chromium/policies
+sudo mkdir /etc/chromium/policies/managed
+echo "{\"AutoSelectCertificateForUrls\": [\"{\\\"pattern\\\":\\\"*\\\",\\\"filter\\\":{}}\"]}" | sudo tee /etc/chromium/policies/managed/AutoSelectCertificateForUrls.json

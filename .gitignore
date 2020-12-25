@@ -198,4 +198,5 @@ dmypy.json
 
 
 # Sensitive information
-/docker/*/docker-compose.override.yml
+docker/*/docker-compose.override.yml
+conf/raspberry-pi/kiosk/grafana-kiosk.yaml
