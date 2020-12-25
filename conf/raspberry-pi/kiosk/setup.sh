@@ -1,12 +1,16 @@
+#!/bin/sh
+
 # Based on https://pimylifeup.com/raspberry-pi-kiosk/
 
-sudo apt install xserver-xorg xinit x11-xserver-utils lightdm    chromium-browser matchbox-window-manager xautomation unclutter upower libgles2
+KIOSK_SETUP_PATH="/home/antoine/git/projects/ilus/conf/raspberry-pi/kiosk"
 
-sudo cp kiosk.service /lib/systemd/system/
+# Install dependencies
+sudo apt install xserver-xorg xinit lightdm    chromium-browser matchbox-window-manager xautomation unclutter upower libgles2
+
+# Copy the service file
+sudo cp $KIOSK_SETUP_PATH/kiosk.service /lib/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable kiosk && sudo systemctl start kiosk
-
-# Import certificate to chrome
 
 # Always autoselect the first valid certificate
 sudo mkdir /etc/chromium-browser/policies
@@ -19,6 +23,9 @@ sudo cp /tmp/grafana-kiosk.linux.armv7 /usr/bin/grafana-kiosk
 sudo chmod 755 /usr/bin/grafana-kiosk
 
 # Fill in grafana-kiosk login info
-cp /home/antoine/git/projects/ilus/conf/raspberry-pi/kiosk/template-grafana-kiosk.yml /home/antoine/git/projects/ilus/conf/raspberry-pi/kiosk/grafana-kiosk.yaml
-chmod 600 /home/antoine/git/projects/ilus/conf/raspberry-pi/kiosk/grafana-kiosk.yaml
-nano /home/antoine/git/projects/ilus/conf/raspberry-pi/kiosk/grafana-kiosk.yaml
+cp $KIOSK_SETUP_PATH/template-grafana-kiosk.yml $KIOSK_SETUP_PATH/grafana-kiosk.yaml
+chmod 600 $KIOSK_SETUP_PATH/grafana-kiosk.yaml
+nano $KIOSK_SETUP_PATH/grafana-kiosk.yaml
+
+# Import certificate to chrome manually
+chromium-browser --display=:0
