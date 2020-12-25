@@ -7,7 +7,7 @@ After=graphical.target
 Environment=DISPLAY=:0
 Environment=XAUTHORITY=/home/pi/.Xauthority
 Type=simple
-ExecStart=/bin/bash /git/projects/ilus/conf/raspberry-pi/kiosk/kiosk.sh
+ExecStart=/bin/bash /home/antoine/git/projects/ilus/conf/raspberry-pi/kiosk/kiosk.sh
 Restart=on-abort
 User=antoine
 Group=antoine
