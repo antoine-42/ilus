@@ -10,7 +10,7 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 sudo apt update && sudo apt upgrade && sudo apt autoremove
-sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties telegraf git zsh docker-ce docker-ce-cli containerd.io
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties    telegraf git zsh smartmontools    docker-ce docker-ce-cli containerd.io
 sudo usermod -a -G video telegraf
 
 # user stuff
