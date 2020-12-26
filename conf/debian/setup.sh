@@ -24,11 +24,12 @@ test $VERSION_ID = "10" && echo "deb https://repos.influxdata.com/debian buster 
 echo "deb http://ftp.debian.org/debian $(lsb_release -cs)-backports main" | sudo tee -a /etc/apt/sources.list > /dev/null
 
 
+# Install packages
 sudo apt update && sudo apt upgrade && sudo apt autoremove
 sudo apt install curl git zsh htop rsync dnsutils qemu-guest-agent youtube-dl    apt-transport-https ca-certificates gnupg-agent software-properties-common    docker-ce docker-ce-cli containerd.io    nut smartmontools lm-sensors telegraf
 sudo apt install linux-image-<latest version>
-
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 sudo usermod -aG docker $USER
 
 # Clone projects

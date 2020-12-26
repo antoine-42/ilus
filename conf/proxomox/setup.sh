@@ -5,11 +5,30 @@ sudo su antoine
 
 # Update the apt repositories https://pve.proxmox.com/wiki/Package_Repositories
 
+# Telegraf
+wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+source /etc/os-release
+test $VERSION_ID = "7" && echo "deb https://repos.influxdata.com/debian wheezy stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+test $VERSION_ID = "8" && echo "deb https://repos.influxdata.com/debian jessie stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+test $VERSION_ID = "9" && echo "deb https://repos.influxdata.com/debian stretch stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+test $VERSION_ID = "10" && echo "deb https://repos.influxdata.com/debian buster stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+
+# Install packages
 sudo apt update && sudo apt upgrade && sudo apt autoremove
-sudo apt install curl git zsh htop rsync    mdadm nut
+sudo apt install curl git zsh htop rsync    mdadm nut smartmontools telegraf
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# reboot
+# Clone projects
+mkdir ~/git
+cd ~/git
+mkdir projects
+cd projects
+git config --global user.email "antoinedujardin42@gmail.com"
+git config --global user.name "Antoine Dujardin"
+git clone --recurse-submodules -j8 git@github.com:antoine-42/ilus.git
+
+# reboot now
+shutdown -r
 
 # Raid setup
 sudo mkdir /mnt/storage
