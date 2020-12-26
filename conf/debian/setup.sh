@@ -49,7 +49,7 @@ sudo cp ~/git/projects/ilus/conf/debian/telegraf/* /etc/telegraf/
 sudo systemctl restart telegraf
 
 # NUT
-#todo
+# Handled by host.
 
 # Secondary IP adress
 # Add to /etc/network/interfaces:

@@ -15,7 +15,7 @@ test $VERSION_ID = "10" && echo "deb https://repos.influxdata.com/debian buster 
 
 # Install packages
 sudo apt update && sudo apt upgrade && sudo apt autoremove
-sudo apt install curl git zsh htop rsync    mdadm nut smartmontools telegraf
+sudo apt install curl git zsh htop rsync    mdadm nut smartmontools lm-sensors telegraf
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Clone projects
