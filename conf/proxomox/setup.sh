@@ -15,7 +15,7 @@ test $VERSION_ID = "10" && echo "deb https://repos.influxdata.com/debian buster 
 
 # Install packages
 sudo apt update && sudo apt upgrade && sudo apt autoremove
-sudo apt install curl git zsh htop rsync    mdadm nut smartmontools lm-sensors telegraf
+sudo apt install curl git zsh htop rsync    mdadm nut smartmontools nvme-cli lm-sensors telegraf
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Clone projects
@@ -26,6 +26,11 @@ cd projects
 git config --global user.email "antoinedujardin42@gmail.com"
 git config --global user.name "Antoine Dujardin"
 git clone --recurse-submodules -j8 git@github.com:antoine-42/ilus.git
+
+# Telegraf conf
+cd ~/git/projects/ilus/conf/proxomox/
+sudo cp telegraf.conf /etc/telegraf/telegraf.conf
+# https://github.com/influxdata/telegraf/tree/master/plugins/inputs/smart#permissions
 
 # reboot now
 shutdown -r
